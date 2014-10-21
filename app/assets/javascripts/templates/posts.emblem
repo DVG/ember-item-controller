@@ -1,5 +1,27 @@
-each post in controller
-  h1
-    post.title
-  p
-    post.body
+.row
+  .col-md-9
+    table.table.table-striped
+      thead
+        tr
+          th Selected
+          th Title
+          th Body
+      tbody
+        each post in controller
+          tr
+            td
+              = input type="checkbox" checked=post.isSelected
+            td
+              post.title
+            td
+              post.body
+  .col-md-3
+    table.table.table-striped
+      thead
+        tr
+          th Selected Posts
+      tbody
+        each post in selectedPosts
+          tr
+            td
+              post.title
